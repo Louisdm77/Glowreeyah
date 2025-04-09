@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Slider from "react-slick"; // Import react-slick
-import "slick-carousel/slick/slick.css"; // Import slick CSS
-import "slick-carousel/slick/slick-theme.css"; // Import slick theme CSS
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import glo from "./assets/img/glow.jpg";
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
+
   const tools = [
     "HTML",
     "CSS",
@@ -43,41 +45,53 @@ const App = () => {
     },
   ];
 
-  // Slider settings for auto-sliding carousel
   const sliderSettings = {
-    dots: true, // Show navigation dots
-    infinite: true, // Loop the carousel
-    speed: 500, // Transition speed in milliseconds
-    slidesToShow: 3, // Show 3 slides at a time on large screens
-    slidesToScroll: 1, // Scroll 1 slide at a time
-    autoplay: true, // Enable auto-sliding
-    autoplaySpeed: 3000, // Slide every 3 seconds
-    arrows: false, // Hide arrows for a cleaner look
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024, // Medium screens
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 640, // Small screens
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
         },
       },
     ],
+    // Custom dot styling
+    customPaging: () => (
+      <div className="w-3 h-3 bg-white rounded-full" />
+    ),
+    dotsClass: "slick-dots custom-dots",
   };
 
   return (
     <div className="bg-gray-900 text-white font-sans min-h-screen">
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 shadow-lg">
+      {/* Navigation Bar with Hamburger */}
+      <nav className="  top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 shadow-lg ">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-indigo-300">
             Felix Gloria
           </a>
-          <ul className="flex space-x-8">
+          {/* Hamburger Icon */}
+          <button
+            className="md:hidden text-3xl focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? "✕" : "☰"}
+          </button>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex space-x-8">
             <li>
               <a
                 href="#home"
@@ -120,6 +134,56 @@ const App = () => {
             </li>
           </ul>
         </div>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <ul className="md:hidden flex flex-col items-center space-y-4 py-4 bg-gray-900">
+            <li>
+              <a
+                href="#home"
+                className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -241,7 +305,7 @@ const App = () => {
               <div key={project.title} className="px-3">
                 <motion.div
                   className="bg-gray-700 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:-translate-y-3"
-                  whileHover={{ scale: 1.05 }} // Add hover animation
+                  whileHover={{ scale: 1.05 }}
                 >
                   <img
                     src={project.image}
@@ -291,7 +355,7 @@ const App = () => {
               delivered ahead of schedule and exceeded all my expectations."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - Janet Toba, Startup Founder
+              - Jane Doe, Startup Founder
             </p>
           </motion.div>
           <motion.div
@@ -301,13 +365,13 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "Gloria brought unparalleled expertise to our team. The
-              real-time dashboard she built not only looks incredible but also
-              performs flawlessly under heavy use. Her professionalism and
-              creativity is top-tier."
+              "[Your Name] brought unparalleled expertise to our team. The
+              real-time dashboard they built not only looks incredible but also
+              performs flawlessly under heavy use. Their professionalism and
+              creativity are top-tier."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - Tunde Olabiyi, Tech Lead at Bekomson Graphics
+              - John Smith, Tech Lead at XYZ Corp
             </p>
           </motion.div>
           <motion.div
@@ -317,13 +381,13 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg md:col-span-2"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "I’ve collaborated with many developers, but Gloria stands
-              out for her ability to blend aesthetics with functionality. The
-              e-commerce platform she developed has boosted our sales by 40%
+              "I’ve collaborated with many developers, but [Your Name] stands
+              out for their ability to blend aesthetics with functionality. The
+              e-commerce platform they developed has boosted our sales by 40%
               thanks to its intuitive design and seamless performance."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - Emily Carter, Catrus Manager
+              - Emily Carter, E-Commerce Manager
             </p>
           </motion.div>
         </div>
