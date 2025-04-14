@@ -81,7 +81,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white font-sans min-h-screen">
+    <div className="bg-gray-900 text-white font-sans min-h-screen  w-full overflow-x-hidden">
       {/* Navigation Bar with Hamburger */}
       <nav className="  top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 shadow-lg ">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
