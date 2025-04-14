@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import glo from "./assets/img/glow.jpg";
+import plumb from "./assets/img/plumb.png"
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
@@ -20,28 +21,32 @@ const App = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Plumbing Pro",
       description:
-        "A fully responsive online store built with React and Tailwind CSS, featuring a seamless shopping cart, payment integration with Stripe, and a dynamic product catalog powered by Firebase.",
-      image: "https://via.placeholder.com/400x300",
+        "A fully responsive online plumbing store built with React and Tailwind CSS, featuring a booking form and aids easy communication with the plumbing company.",
+      image: plumb,
+      link:'https://plumbing-pro.vercel.app/'
     },
     {
       title: "Portfolio Showcase",
       description:
         "A minimalist yet elegant portfolio site designed with Bootstrap and animated with Framer Motion. It highlights my work with smooth transitions and a mobile-first approach.",
       image: "https://via.placeholder.com/400x300",
+      link:''
     },
     {
       title: "Real-Time Dashboard",
       description:
         "A sophisticated dashboard application leveraging JavaScript and Firebase for real-time data updates. Features include interactive charts, user authentication, and a clean, modern UI.",
       image: "https://via.placeholder.com/400x300",
+      link:''
     },
     {
       title: "Blog Platform",
       description:
         "A content-rich blogging site built with React and styled with Tailwind CSS. It includes a markdown editor, comment system, and Firebase-powered backend for post management.",
       image: "https://via.placeholder.com/400x300",
+      link:''
     },
   ];
 
@@ -53,7 +58,7 @@ const App = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -318,7 +323,7 @@ const App = () => {
                       {project.description}
                     </p>
                     <a
-                      href="#"
+                      href={project.link}
                       className="mt-4 inline-block text-indigo-400 hover:text-indigo-300 font-medium"
                     >
                       View Details →
@@ -349,13 +354,13 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "Working with [Your Name] was a game-changer. Their attention to
+              "Working with Gloria was a game-changer. Their attention to
               detail and ability to turn my vision into a polished, functional
               website was nothing short of exceptional. The project was
               delivered ahead of schedule and exceeded all my expectations."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - Jane Doe, Startup Founder
+              - James Lovren, Startup Founder
             </p>
           </motion.div>
           <motion.div
@@ -365,13 +370,13 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "[Your Name] brought unparalleled expertise to our team. The
-              real-time dashboard they built not only looks incredible but also
-              performs flawlessly under heavy use. Their professionalism and
-              creativity are top-tier."
+              "Gloria brought unparalleled expertise to our team. The
+              real-time chat app she built not only looks incredible but also
+              performs flawlessly under heavy use. Her professionalism and
+              creativity is top-tier."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - John Smith, Tech Lead at XYZ Corp
+              - Tunde Paul, Momoa Industries
             </p>
           </motion.div>
           <motion.div
@@ -381,13 +386,13 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg md:col-span-2"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "I’ve collaborated with many developers, but [Your Name] stands
-              out for their ability to blend aesthetics with functionality. The
-              e-commerce platform they developed has boosted our sales by 40%
+              "I’ve collaborated with many developers, but Gloria stands
+              out for her ability to blend aesthetics with functionality. The
+              e-commerce platform we developed together has boosted sales by 40%
               thanks to its intuitive design and seamless performance."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
-              - Emily Carter, E-Commerce Manager
+              - Akwaji Dan, developer
             </p>
           </motion.div>
         </div>
