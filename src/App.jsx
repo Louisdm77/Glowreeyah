@@ -4,7 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import glo from "./assets/img/glow.jpg";
-import plumb from "./assets/img/plumb.png"
+import plumb from "./assets/img/plumb.png";
+import electro from "./assets/img/electropro.png";
+import lux from "./assets/img/luxwears.png";
+import build from "./assets/img/buildmasters.png";
+import paw from "./assets/img/pet.png";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
@@ -21,32 +25,40 @@ const App = () => {
 
   const projects = [
     {
+      id: 1,
+      title: "ElectroPro",
+      description: "A stylish website that highlights artistic works.",
+      image: electro,
+      link: "https://electro-pro.vercel.app/",
+    },
+    {
+      id: 7,
       title: "Plumbing Pro",
       description:
-        "A fully responsive online plumbing store built with React and Tailwind CSS, featuring a booking form and aids easy communication with the plumbing company.",
+        "A fully responsive online plumbing store with booking feature.",
       image: plumb,
-      link:'https://plumbing-pro.vercel.app/'
+      link: "https://plumbing-pro.vercel.app/",
     },
     {
-      title: "Portfolio Showcase",
-      description:
-        "A minimalist yet elegant portfolio site designed with Bootstrap and animated with Framer Motion. It highlights my work with smooth transitions and a mobile-first approach.",
-      image: "https://via.placeholder.com/400x300",
-      link:''
+      id: 2,
+      title: "LuxWears",
+      description: "An elegant landing page designed for a fashion agency.",
+      image: lux,
+      link: "https://landing-seven-ruby.vercel.app/",
     },
     {
-      title: "Real-Time Dashboard",
-      description:
-        "A sophisticated dashboard application leveraging JavaScript and Firebase for real-time data updates. Features include interactive charts, user authentication, and a clean, modern UI.",
-      image: "https://via.placeholder.com/400x300",
-      link:''
+      id: 3,
+      title: "Pawsome Pets",
+      description: "A clean, responsive website for people who love pets.",
+      image: paw,
+      link: "https://pawsomepet.vercel.app/",
     },
     {
-      title: "Blog Platform",
-      description:
-        "A content-rich blogging site built with React and styled with Tailwind CSS. It includes a markdown editor, comment system, and Firebase-powered backend for post management.",
-      image: "https://via.placeholder.com/400x300",
-      link:''
+      id: 4,
+      title: "BuildMasters",
+      description: "A user-friendly online construction platform .",
+      image: build,
+      link: "https://build-masters-liart.vercel.app/",
     },
   ];
 
@@ -74,9 +86,7 @@ const App = () => {
       },
     ],
     // Custom dot styling
-    customPaging: () => (
-      <div className="w-3 h-3 bg-white rounded-full" />
-    ),
+    customPaging: () => <div className="w-3 h-3 bg-white rounded-full" />,
     dotsClass: "slick-dots custom-dots",
   };
 
@@ -354,10 +364,10 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "Working with Gloria was a game-changer. Their attention to
-              detail and ability to turn my vision into a polished, functional
-              website was nothing short of exceptional. The project was
-              delivered ahead of schedule and exceeded all my expectations."
+              "Working with Gloria was a game-changer. Their attention to detail
+              and ability to turn my vision into a polished, functional website
+              was nothing short of exceptional. The project was delivered ahead
+              of schedule and exceeded all my expectations."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
               - James Lovren, Startup Founder
@@ -370,10 +380,10 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "Gloria brought unparalleled expertise to our team. The
-              real-time chat app she built not only looks incredible but also
-              performs flawlessly under heavy use. Her professionalism and
-              creativity is top-tier."
+              "Gloria brought unparalleled expertise to our team. The real-time
+              chat app she built not only looks incredible but also performs
+              flawlessly under heavy use. Her professionalism and creativity is
+              top-tier."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
               - Tunde Paul, Momoa Industries
@@ -386,10 +396,10 @@ const App = () => {
             className="bg-gray-800 p-8 rounded-lg md:col-span-2"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              "I’ve collaborated with many developers, but Gloria stands
-              out for her ability to blend aesthetics with functionality. The
-              e-commerce platform we developed together has boosted sales by 40%
-              thanks to its intuitive design and seamless performance."
+              "I’ve collaborated with many developers, but Gloria stands out for
+              her ability to blend aesthetics with functionality. The e-commerce
+              platform we developed together has boosted sales by 40% thanks to
+              its intuitive design and seamless performance."
             </p>
             <p className="mt-6 text-indigo-400 font-semibold">
               - Akwaji Dan, developer
