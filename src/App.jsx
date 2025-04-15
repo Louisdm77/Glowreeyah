@@ -478,7 +478,7 @@ const App = () => {
       {/* Footer */}
       <footer className="bg-black py-8 text-center">
         <p className="text-gray-400 text-lg">
-          © 2025 Felix Gloria. Designed and developed with precision, passion, and
+          © 2025 Felix Gloria. <br />Designed and developed with precision, passion, and
           a commitment to excellence.
         </p>
         <p className="text-gray-500 mt-2">
