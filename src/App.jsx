@@ -428,7 +428,7 @@ const App = () => {
             <div className="flex flex-col md:flex-row gap-6">
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Felix Gloria"
                 className="w-full p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-indigo-500"
               />
               <input
@@ -478,7 +478,7 @@ const App = () => {
       {/* Footer */}
       <footer className="bg-black py-8 text-center">
         <p className="text-gray-400 text-lg">
-          © 2025 Your Name. Designed and developed with precision, passion, and
+          © 2025 Felix Gloria. Designed and developed with precision, passion, and
           a commitment to excellence.
         </p>
         <p className="text-gray-500 mt-2">
